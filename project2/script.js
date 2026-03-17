@@ -1,4 +1,3 @@
-import { ethers } from "https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.min.js";
 const contractAddress = "0xdf7957b0B806f3e060E909F2436842434D825Cf0";
 const ABI = [
 	{
@@ -53,6 +52,10 @@ let provider = null;
 
 provider = new ethers.BrowserProvider(window.ethereum);
 async function init() {
+	if (window.ethereum == null) {
+        alert("Пожалуйста, установите MetaMask!");
+        return;
+    }
     await provider.send("eth_requestAccounts", []);
     const accounts = await provider.listAccounts();
     signer = await provider.getSigner();
