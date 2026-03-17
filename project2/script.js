@@ -50,12 +50,13 @@ let signer = null;
 let contract = null;
 let provider = null;
 
-provider = new ethers.BrowserProvider(window.ethereum);
 async function init() {
 	if (window.ethereum == null) {
         alert("Пожалуйста, установите MetaMask!");
         return;
     }
+
+	provider = new ethers.BrowserProvider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
     const accounts = await provider.listAccounts();
     signer = await provider.getSigner();
@@ -64,6 +65,13 @@ async function init() {
 
     console.log("Signer address:", await signer.getAddress());
 }
+
+// Убедимся, что вешаем события только когда элементы точно есть
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("writeNote").addEventListener("click", setNote);
+    document.getElementById("getNote").addEventListener("click", getNote);
+    init().catch(console.error);
+});
 
 async function setNote() {
     const note = document.getElementById("inputNote").value;
