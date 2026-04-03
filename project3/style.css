@@ -1,0 +1,220 @@
+/* Общие стили страницы: темный фон, неоновый зеленый текст и центрирование контента */
+body {
+    background-color: #0a0a0a; /* почти черный фон */
+    color: #28ff28; /* основной цвет текста */
+    font-family: 'Courier New', Courier, monospace; /* моноширинный "терминальный" шрифт */
+    display: flex; /* включаем flex для центрирования */
+    justify-content: center; /* горизонтальное центрирование */
+    align-items: center; /* вертикальное центрирование */
+    height: 100vh; /* высота на весь экран */
+    margin: 0; /* убираем отступы */
+    overflow: hidden; /* отключаем прокрутку */
+}
+
+/* Основной контейнер игры */
+.game-container {
+    width: 90%; /* адаптивная ширина */
+    max-width: 600px; /* ограничение максимальной ширины */
+    border: 1px solid #00ff41; /* неоновая рамка */
+    padding: 20px; /* внутренние отступы */
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.2); /* легкое свечение */
+    background: rgba(0, 0, 0, 0.9); /* полупрозрачный фон */
+}
+
+/* Заголовок */
+h2 {
+    text-align: center; /* по центру */
+    text-transform: uppercase; /* верхний регистр */
+    letter-spacing: 3px; /* расстояние между буквами */
+    border-bottom: 1px solid #00ff41; /* линия снизу */
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Блок "консоли" для вывода сообщений */
+#status-console {
+    background: #000; /* черный фон */
+    border: 1px solid #333; /* темная рамка */
+    padding: 10px;
+    margin: 20px 0;
+    height: 60px; /* фиксированная высота */
+    font-size: 0.85rem;
+    overflow-y: auto; /* вертикальный скролл */
+    color: #00ff41; /* неоновый текст */
+}
+
+/* Контейнер кнопок выбора */
+.choices {
+    display: flex;
+    justify-content: space-around; /* равномерное распределение */
+    margin: 30px 0;
+}
+
+/* Кнопки выбора (камень/ножницы/бумага) */
+.choices button {
+    background: transparent;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    padding: 15px 25px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease; /* плавные эффекты */
+}
+
+/* Эффект при наведении (если кнопка активна) */
+.choices button:hover:not(:disabled) {
+    background: #00ff41;
+    color: #000;
+    box-shadow: 0 0 20px #00ff41;
+}
+
+/* Состояние отключенной кнопки */
+.choices button:disabled {
+    border-color: #003300;
+    color: #003300;
+    cursor: not-allowed;
+}
+
+/* Блок отображения результата */
+#result {
+    text-align: center;
+    font-size: 1.2rem;
+    min-height: 30px; /* чтобы не "прыгала" верстка */
+    margin-bottom: 20px;
+}
+
+/* Кнопка администратора (вывод средств) */
+.admin-btn {
+    display: block;
+    width: 100%;
+    margin: 20px auto 0;
+    background: transparent;
+    border: 1px solid #ff003c; /* красный цвет */
+    color: #ff003c;
+    font-family: inherit;
+    font-size: 0.8rem;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Эффект наведения для админ-кнопки */
+.admin-btn:hover:not(:disabled) {
+    background: rgba(255, 0, 60, 0.1);
+    box-shadow: inset 0 0 10px rgba(255, 0, 60, 0.5),
+                0 0 15px rgba(255, 0, 60, 0.3);
+    color: #fff;
+    text-shadow: 0 0 5px #ff003c;
+}
+
+/* Эффект нажатия */
+.admin-btn:active {
+    transform: scale(0.98);
+}
+
+/* Панель статистики (баланс, победы, поражения) */
+.stats-panel {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-bottom: 1px dashed #00ff41;
+}
+
+/* Баланс пользователя выделен белым */
+#user-balance {
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Анимация мигания */
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+/* Ключевые кадры анимации */
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Общий стиль для отключенных кнопок */
+button:disabled {
+    opacity: 0.5;
+    cursor: wait !important;
+    border-color: #555 !important;
+    color: #555 !important;
+    box-shadow: none !important;
+}
+
+/* Дополнительное оформление результата */
+#result {
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Ограниченное мигание (3 раза быстрее) */
+.blink {
+    animation: blinker 0.8s linear 3;
+}
+
+/* Повторное объявление keyframes (переопределение) */
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* Универсальная кнопка (например, обновление) */
+.cyber-button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid #00ff41;
+    color: #00ff41;
+    font-family: inherit;
+    font-size: 0.8rem;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Эффект наведения */
+.cyber-button:hover:not(:disabled) {
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: inset 0 0 10px rgba(0, 255, 65, 0.5),
+                0 0 15px rgba(0, 255, 65, 0.3);
+    color: #fff;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+/* Эффект нажатия */
+.cyber-button:active {
+    transform: scale(0.98);
+}
+
+/* Стилизация полосы прокрутки консоли */
+#status-console::-webkit-scrollbar {
+    width: 5px;
+}
+
+#status-console::-webkit-scrollbar-track {
+    background: #000;
+}
+
+#status-console::-webkit-scrollbar-thumb {
+    background: #00ff41;
+}
+
+/* Дополнительное оформление блока результата */
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid rgba(0, 255, 65, 0.1);
+    background: rgba(0, 255, 65, 0.02);
+}
