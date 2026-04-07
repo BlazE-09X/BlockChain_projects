@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocSign Web3</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 DocSign <span class="badge">v1.0</span></h1>
+            <button id="connect" class="btn-connect">Connect Wallet</button>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Создать документ</h2>
+                <div class="form-group">
+                    <label for="fileInput">Выберите файл для хеширования</label>
+                    <input type="file" id="fileInput">
+                </div>
+                <div class="form-group">
+                    <h3>Список подписантов (из HTML):</h3>
+    <ul class="address-list" id="htmlAddresses">
+        <li class="address-item">0x0eC482e4c53D1fEFad01cD7C03D5A5340F466b12</li>
+        <li class="address-item">0x9cfB224D938666dB873661dC8cAe5f5EE82550C1</li>
+        <li class="address-item">0x482192b74111f5840d057F579DCECf69843B5D7F</li>
+    </ul>
+                </div>
+                <button id="create" class="btn-primary">Создать в Blockchain</button>
+            </section>
+
+            <section class="card">
+                <h2>Подписать документ</h2>
+                <div class="form-group">
+                    <label for="docId">ID документа</label>
+                    <input type="number" id="docId" placeholder="Например: 1">
+                </div>
+                <button id="sign" class="btn-secondary">Подписать</button>
+            </section>
+        </main>
+
+        <footer>
+            <div id="status" class="status-bar">Готов к работе...</div>
+        </footer>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
