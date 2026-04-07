@@ -10,6 +10,7 @@ const ABI = [
 ];
 
 let provider, signer, contract;
+
 const statusDisplay = document.getElementById("status");
 
 function updateStatus(msg, isError = false) {
