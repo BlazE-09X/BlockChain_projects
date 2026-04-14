@@ -10,12 +10,10 @@ async function main() {
 
   console.log("Deploying Ballot with proposals:", proposals);
 
-  // берём RPC из конфига
   const provider = new ethers.JsonRpcProvider(process.env.RPC_URL);
 
   const wallet = new ethers.Wallet(process.env.PRIVATE_KEY!, provider);
 
-  // получаем артефакт контракта
   const artifact = await hre.artifacts.readArtifact("Ballot");
 
   const factory = new ethers.ContractFactory(
