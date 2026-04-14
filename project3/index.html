@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber-KNB Terminal</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+  </head>
+  <body>
+    <div class="game-container">
+      <h2>System.Protocol: KNB_v2</h2>
+
+      <div id="status-console">Initializing... Please connect MetaMask.</div>
+
+      <div class="stats-panel">
+        <div class="stat-item">
+          WALLET: <span id="user-balance">0.000</span> tBNB
+        </div>
+        <div class="stat-item">
+          SCORE: <span id="score-wins">0</span> W -
+          <span id="score-losses">0</span> L
+        </div>
+      </div>
+
+      <div class="choices">
+        <button id="btn-0" onclick="playGame(0)">[ ROCK ]</button>
+        <button id="btn-1" onclick="playGame(1)">[ PAPER ]</button>
+        <button id="btn-2" onclick="playGame(2)">[ SCISSORS ]</button>
+      </div>
+
+      <div id="result">_AWAITING_INPUT_</div>
+
+      <button id="sync-btn" onclick="updateUI()" class="cyber-button">
+        ОБНОВИТЬ БАЛАНС И СЧЕТ
+      </button>
+
+      <button id="withdraw-btn" class="admin-btn" onclick="withdrawFunds()">
+        ВЫВЕСТИ ВСЕ СРЕДСТВА
+      </button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
