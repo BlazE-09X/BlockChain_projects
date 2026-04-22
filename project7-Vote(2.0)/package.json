@@ -1,0 +1,25 @@
+{
+  "name": "project7-vote(2.0)",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test --import tsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.8",
+    "@nomicfoundation/hardhat-verify": "^3.0.14",
+    "@types/node": "^22.19.17",
+    "hardhat": "^3.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ethers": "^6.16.0"
+  }
+}
