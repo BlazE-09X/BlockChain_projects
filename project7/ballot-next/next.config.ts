@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
-/** @type {import('next').NextConfig} */
+
+const repo = "/Blockchain_projects/project7/ballot-next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  basePath: '/Blockchain_projects/project7/ballot-next',
+  output: "export",
+  basePath: repo,
+  assetPrefix: repo + "/",
   images: {
     unoptimized: true,
   },
