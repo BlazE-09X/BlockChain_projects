@@ -30,6 +30,6 @@ jobs:
       - name: Deploy to Branch 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: Blockchain_projects/project7/ballot-next/out
-          target-folder: Blockchain_projects/project7/ballot-next # Деплоим прямо в эту папку
+          folder: project7/ballot-next/out
+          target-folder: project7/ballot-next # Деплоим прямо в эту папку
           branch: gh-pages # Создаем отдельную ветку для хостинга
